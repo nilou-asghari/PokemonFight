@@ -12,7 +12,8 @@
     align-items: center;
     justify-content: center;
     background-color: #43345d;
-    min-height: 800px;
+
+    flex-direction: column;
 }
 
 .wrapper {
@@ -25,13 +26,14 @@
     padding: 30px;
 }
 
-.wrapper h1 {
-    color: #FFCC00;
+.mainContainer h1 {
+    color: #FFf;
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 2rem;
     letter-spacing: 0.2rem;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #CE2211;
+    -webkit-text-stroke-color: #0C3348;
+    ;
 }
 
 .wrapper .cards {
