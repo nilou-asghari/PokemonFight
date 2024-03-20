@@ -31,10 +31,13 @@ const AllPokemons = () => {
   };
   return (
     <div className={`${styles.mainContainer}`}>
+      <h1>Choose your Pokemon</h1>
       <div className={`${styles.wrapper}`}>
-        <h3>Choose your Pokemon</h3>
         <Splide
           options={{
+            trimSpace: "move",
+            focus: "center",
+            pagination: false,
             type: "loop",
             arrows: false,
             drag: "free",
@@ -60,7 +63,7 @@ const AllPokemons = () => {
                 />
               </div>
               <div className={`${styles.content}`}>
-                <p>{pokemon.name}</p>
+                <h2>{pokemon.name}</h2>
               </div>
             </SplideSlide>
           ))}
