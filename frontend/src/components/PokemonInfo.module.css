@@ -1,0 +1,8 @@
+.pokemonPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemonPageUp {
+  display: flex;
+}

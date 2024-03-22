@@ -1,82 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .mainContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #43345d;
-    min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #43345d;
+  min-height: 800px;
 }
 
 .wrapper {
-    position: relative;
-    width: 1600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 30px;
+  position: relative;
+  width: 1600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
 }
 
-
 .wrapper .cards {
-    position: relative;
-    max-width: 300px;
-    height: 215px;
-    background-color: #fff;
-    margin: 130px 10px;
-    padding: 20px 15px;
+  position: relative;
+  max-width: 300px;
+  height: 215px;
+  background-color: #fff;
+  margin: 130px 10px;
+  padding: 20px 15px;
 
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    transition: 0.3s ease-in-out;
-    border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
 }
 
 .wrapper .cards:hover {
-    height: 320px;
+  height: 320px;
 }
 
 .wrapper .cards .image {
-    position: relative;
-    width: 260px;
-    height: 260px;
+  position: relative;
+  width: 260px;
+  height: 260px;
 
-    top: -40%;
-    left: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  top: -40%;
+  left: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .wrapper .cards .image img {
-    width: 100%;
-    border-radius: 15px;
-    background: white;
+  width: 100%;
+  border-radius: 15px;
+  background: white;
 }
 
 .wrapper .cards .content {
-    position: relative;
-    top: -140px;
-    padding: 10px 15px;
-    color: #111;
-    text-align: center;
+  position: relative;
+  top: -140px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
 
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s ease-in-out;
-
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
 }
 
 .wrapper .cards:hover .content {
-    margin-top: 30px;
-    visibility: visible;
-    opacity: 1;
-    transition-delay: 0.2s;
-
+  margin-top: 30px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
 }
