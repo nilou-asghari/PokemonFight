@@ -1,8 +1,34 @@
 .pokemonPage {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.pokemonPageUp {
+.pageUp {
   display: flex;
+  align-items: center;
+}
+
+.img {
+  text-align: center;
+}
+.img > img {
+  width: 500px;
+}
+
+.info {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+.selectButton {
+  margin-top: 20px;
+}
+
+.selectButton button {
+  padding: 20px 20px;
+  font-size: 1.8em;
 }

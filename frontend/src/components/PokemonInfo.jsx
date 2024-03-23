@@ -1,16 +1,20 @@
-import styles from "../components/AllPokemons";
+import styles from "../components/PokemonInfo.module.css";
 
 export default function PokemonInfo() {
   return (
-    <div className="pokemonPage">
-      <div className="pokemonPageUp">
-        <div className="pokemonImg">
-          <img src="https://media.istockphoto.com/id/534195339/photo/pickachu-toy-character-from-pokemon-anime.jpg?s=612x612&w=0&k=20&c=IQEMX_uCVLqNAu-OcGab6QhUaU8HDbT3rNkqq8Qk9Mo=" />
+    <div className={styles.pokemonPage}>
+      <div className={styles.pageUp}>
+        <div className={styles.info}>
+          <p>attack: 55 | defence: 28 | speed: 55</p>
         </div>
-        <div className="pokeminInfo"></div>
+        <div className={styles.img}>
+          <img src="https://media.cnn.com/api/v1/images/stellar/prod/210226040722-01-pokemon-anniversary-design.jpg?q=w_1920,h_1080,x_0,y_0,c_fill" />
+          <h2>Name</h2>
+        </div>
       </div>
-      <div className="selectButton">
-        <button>Select to Fight</button>
+
+      <div className={styles.selectButton}>
+        <butto>Select to Fight</button>
       </div>
     </div>
   );
