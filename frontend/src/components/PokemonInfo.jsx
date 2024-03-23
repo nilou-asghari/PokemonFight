@@ -14,7 +14,7 @@ export default function PokemonInfo() {
       </div>
 
       <div className={styles.selectButton}>
-        <butto>Select to Fight</button>
+        <button>Select to Fight</button>
       </div>
     </div>
   );
