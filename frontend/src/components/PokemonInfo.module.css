@@ -25,10 +25,14 @@
 }
 
 .selectButton {
-  margin-top: 20px;
+  margin-top: 70px;
 }
 
 .selectButton button {
   padding: 20px 20px;
   font-size: 1.8em;
+  border-radius: 10%;
+  color: black;
+  font-weight: 700;
+  background-color: rgb(205, 24, 24);
 }
