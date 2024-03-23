@@ -14,7 +14,10 @@ export default function PokemonInfo({ pokemon }) {
           </h3>
         </div>
         <div className={styles.img}>
-          <img src="https://media.cnn.com/api/v1/images/stellar/prod/210226040722-01-pokemon-anniversary-design.jpg?q=w_1920,h_1080,x_0,y_0,c_fill" />
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+            alt={pokemon.name}
+          />
           <h2>{pokemon.name.english}</h2>
         </div>
       </div>

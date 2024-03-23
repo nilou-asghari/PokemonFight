@@ -1,11 +1,26 @@
+import { useEffect, useMemo, useState } from "react";
 import styles from "../components/PokemonFight.module.css";
 
 const PokemonFight = ({ pokemon, pokemonList }) => {
-  const randomNumber = Math.floor(Math.random() * 30);
-  console.log(randomNumber);
+  const [outcomeText, setOutcomeText] = useState("");
 
-  const randomPokemon = pokemonList[randomNumber];
-  console.log(randomPokemon);
+  const number = useMemo(() => Math.floor(Math.random() * 30), []);
+  const randomPokemon = pokemonList[number];
+
+  const fightLogic = (pokemon, randomPokemon) => {
+    const randomNumber1 = Math.floor(Math.random() * 50);
+    const randomNumber2 = Math.floor(Math.random() * 50);
+
+    if (randomNumber1 > randomNumber2) {
+      setOutcomeText(`${pokemon} won !`);
+    } else if (randomNumber2 > randomNumber1) {
+      setOutcomeText(`${randomPokemon} won !`);
+    } else {
+      setOutcomeText("DOPPEL K.O. !!");
+    }
+  };
+
+  useEffect(() => {}, [outcomeText]);
 
   return (
     <div className={styles.background}>
@@ -17,12 +32,28 @@ const PokemonFight = ({ pokemon, pokemonList }) => {
           </h3>
         </div> */}
         <div className={styles.img}>
-          <img src="https://media.cnn.com/api/v1/images/stellar/prod/210226040722-01-pokemon-anniversary-design.jpg?q=w_1920,h_1080,x_0,y_0,c_fill" />
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+            alt={pokemon.name}
+          />
           <h2>{pokemon.name.english}</h2>
         </div>
         <div className={styles.img}>
-          <img src="https://media.cnn.com/api/v1/images/stellar/prod/210226040722-01-pokemon-anniversary-design.jpg?q=w_1920,h_1080,x_0,y_0,c_fill" />
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`}
+            alt={pokemon.name}
+          />
           <h2>{randomPokemon.name.english}</h2>
+        </div>
+        <div className={styles.selectButton}>
+          <button
+            onClick={() =>
+              fightLogic(pokemon.name.english, randomPokemon.name.english)
+            }
+          >
+            Fight!
+          </button>
+          <h1>{outcomeText}</h1>
         </div>
       </div>
     </div>
