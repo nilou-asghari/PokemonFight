@@ -1,0 +1,45 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+@import url("https://fonts.cdnfonts.com/css/boxiest");
+@import url("https://fonts.cdnfonts.com/css/agoestoesan");
+
+.pokemonPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.pageUp {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  text-align: center;
+}
+.img > img {
+  width: 500px;
+}
+.img > h2 {
+  font-family: "Agoestoesan", sans-serif;
+}
+
+.info {
+  border: 2px solid black;
+  padding: 10px;
+  font-family: "Agoestoesan", sans-serif;
+}
+
+.selectButton {
+  margin-top: 70px;
+}
+
+.selectButton button {
+  padding: 20px 20px;
+  font-size: 1.8em;
+  border-radius: 10%;
+  color: black;
+  font-weight: 700;
+  background-color: rgb(205, 24, 24);
+}

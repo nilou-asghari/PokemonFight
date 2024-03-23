@@ -1,37 +1,51 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import AllPokemons from "./components/AllPokemons";
+import PokemonInfo from "./components/PokemonInfo";
+import ErrorPage from "./components/ErrorPage";
 import PokemonFight from "./components/PokemonFight";
 import Navbar from "./components/Navbar";
 import { useState, useEffect } from "react";
 
-function App() {
-  const [pokemons, setPokemons] = useState([]);
+export default function App() {
+  const [pokemonData, setPokemonData] = useState([]);
+  const params = useParams();
 
   useEffect(() => {
-    const fetchPokemons = async () => {
+    const pokemonApi =
+      "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json";
+
+    async function getPokemon() {
       try {
-        const res = await axios.get(
-          "https://pokeapi.co/api/v2/pokemon?limit=30"
-        );
-        setPokemons(res.data.results);
-        console.log(res.data.results);
+        const res = await fetch(pokemonApi);
+        const resData = await res.json();
+        setPokemonData(resData);
       } catch (error) {
-        console.error("Error fetching Pokémon data:", error);
+        console.log(error);
       }
-    };
-    fetchPokemons();
+    }
+
+    getPokemon();
   }, []);
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<AllPokemons />} />
-        <Route path="/pokemon/fight" element={<PokemonFight />} />
-      </Routes>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<AllPokemons />} />
+          {pokemonData.map((pokemon) => (
+            <Route
+              key={pokemon.id}
+              path={`/${pokemon.id}`}
+              element={<PokemonInfo pokemon={pokemon} />}
+            />
+          ))}
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="/pokemon/fight" element={<PokemonFight />} />
+        </Routes>
+      </div>
     </>
   );
 }
-
-export default App;
