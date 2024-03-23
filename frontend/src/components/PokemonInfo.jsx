@@ -1,20 +1,25 @@
 import styles from "../components/PokemonInfo.module.css";
+import { useNavigate } from "react-router-dom";
 
-export default function PokemonInfo() {
+export default function PokemonInfo({ pokemon }) {
+  console.log(`/${pokemon.id}`);
   return (
     <div className={styles.pokemonPage}>
       <div className={styles.pageUp}>
         <div className={styles.info}>
-          <p>attack: 55 | defence: 28 | speed: 55</p>
+          <h3>
+            Attack: {pokemon.base.Attack} <br /> Defence:{pokemon.base.Defense}{" "}
+            <br /> Speed:{pokemon.base.Speed}
+          </h3>
         </div>
         <div className={styles.img}>
           <img src="https://media.cnn.com/api/v1/images/stellar/prod/210226040722-01-pokemon-anniversary-design.jpg?q=w_1920,h_1080,x_0,y_0,c_fill" />
-          <h2>Name</h2>
+          <h2>{pokemon.name.english}</h2>
         </div>
       </div>
 
       <div className={styles.selectButton}>
-        <button>Select to Fight</button>
+        <button onClick={() => navigate("/fight")}>Select to fight</button>
       </div>
     </div>
   );
