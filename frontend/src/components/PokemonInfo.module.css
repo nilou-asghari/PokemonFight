@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: linear-gradient(110deg, #0a4da4 60%, #24a8c6 60%);
 }
 
 .pageUp {
@@ -17,9 +18,12 @@
 
 .img {
   text-align: center;
+  border: 5px solid black;
+  border-radius: 15px;
 }
 .img > img {
   width: 500px;
+  border-radius: 15px;
 }
 .img > h2 {
   font-family: "Agoestoesan", sans-serif;

@@ -11,3 +11,27 @@
   width: auto;
   height: 100vh;
 }
+
+.pageUp {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  text-align: center;
+  border: 5px solid black;
+  border-radius: 15px;
+}
+.img > img {
+  width: 500px;
+  border-radius: 15px;
+}
+.img > h2 {
+  font-family: "Agoestoesan", sans-serif;
+}
+
+.info {
+  border: 2px solid black;
+  padding: 10px;
+  font-family: "Agoestoesan", sans-serif;
+}
