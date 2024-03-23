@@ -1,4 +1,5 @@
 import styles from "../components/PokemonInfo.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function PokemonInfo({ pokemon }) {
   console.log(`/${pokemon.id}`);
@@ -18,7 +19,7 @@ export default function PokemonInfo({ pokemon }) {
       </div>
 
       <div className={styles.selectButton}>
-        <button>Select to Fight</button>
+        <button onClick={() => navigate("/fight")}>Select to fight</button>
       </div>
     </div>
   );

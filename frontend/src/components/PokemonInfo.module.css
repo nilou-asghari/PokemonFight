@@ -1,3 +1,7 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+@import url("https://fonts.cdnfonts.com/css/boxiest");
+@import url("https://fonts.cdnfonts.com/css/agoestoesan");
+
 .pokemonPage {
   display: flex;
   flex-direction: column;
@@ -17,11 +21,14 @@
 .img > img {
   width: 500px;
 }
+.img > h2 {
+  font-family: "Agoestoesan", sans-serif;
+}
 
 .info {
   border: 2px solid black;
   padding: 10px;
-  text-align: left;
+  font-family: "Agoestoesan", sans-serif;
 }
 
 .selectButton {

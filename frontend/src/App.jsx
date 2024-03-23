@@ -40,6 +40,7 @@ export default function App() {
               element={<PokemonInfo pokemon={pokemon} />}
             />
           ))}
+          <Route path="/fight" />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
