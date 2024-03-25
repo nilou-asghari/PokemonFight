@@ -3,6 +3,7 @@ import axios from "axios";
 import styles from "../components/AllPokemons.module.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { useNavigate } from "react-router-dom";
 
 const AllPokemons = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -10,6 +11,7 @@ const AllPokemons = () => {
   const cardsRef = useRef([]);
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPokemons = async () => {
@@ -26,9 +28,6 @@ const AllPokemons = () => {
     fetchPokemons();
   }, []);
 
-  const handleCardClick = (pokemon) => {
-    console.log("the card is clicked", pokemon);
-  };
   return (
     <div className={`${styles.mainContainer}`}>
       <h1>Choose your Pokemon</h1>
@@ -52,7 +51,7 @@ const AllPokemons = () => {
             <SplideSlide
               key={index}
               className={`${styles.cards}`}
-              onClick={() => handleCardClick(pokemon)}
+              onClick={() => navigate(`/${index + 1}`)}
             >
               <div className={`${styles.image}`}>
                 <img

@@ -1,10 +1,11 @@
 import "./App.css";
 import { Route, Routes, useParams } from "react-router-dom";
-import React, { useState, useEffect } from "react";
 import AllPokemons from "./components/AllPokemons";
 import PokemonInfo from "./components/PokemonInfo";
 import ErrorPage from "./components/ErrorPage";
+import PokemonFight from "./components/PokemonFight";
 import Navbar from "./components/Navbar";
+import { useState, useEffect } from "react";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -40,7 +41,16 @@ export default function App() {
               element={<PokemonInfo pokemon={pokemon} />}
             />
           ))}
-          <Route path="/fight" />
+          ;
+          {pokemonData.map((pokemon) => (
+            <Route
+              key={pokemon.id}
+              path={`/pokemon/fight/${pokemon.id}`}
+              element={
+                <PokemonFight pokemon={pokemon} pokemonList={pokemonData} />
+              }
+            />
+          ))}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
