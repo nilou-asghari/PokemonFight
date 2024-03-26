@@ -14,7 +14,7 @@
   justify-content: center;
   background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
   width: auto;
-  height: auto;
+  height: 95vh;
 }
 
 .pageUp {
@@ -26,16 +26,47 @@
 
 .img {
   text-align: center;
-  border: 5px solid black;
   border-radius: 15px;
 }
 
-.img>img {
+.img > img {
   width: 500px;
   border-radius: 15px;
 }
 
-.img>h2 {
+.faceRight {
+  transform: rotateY(180deg);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(10px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(-10px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(10px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(-10px);
+  }
+}
+
+.fightStarted {
+  animation-name: shake;
+  animation-duration: 1s;
+}
+
+.img > h2 {
   font-family: "Agoestoesan", sans-serif;
 }
 
@@ -53,12 +84,29 @@
   margin-top: 70px;
 }
 
-.selectButton button {
+.selectButton h1 {
+  padding: 50px 50px;
+  font-family: "Agoestoesan", sans-serif;
+}
 
+.selectButton button {
   padding: 20px 20px;
   font-size: 1.8em;
   border-radius: 10%;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 700;
-  background-color: rgb(205, 24, 24);
+  background-color: rgb(97, 41, 137);
+  font-family: "Agoestoesan", sans-serif;
+  border: 3px solid;
+}
+
+.selectButton button:hover {
+  color: #000000;
+  background: #f30000;
+  border-color: #fbde3b;
+  transition: all 0.4s ease 0s;
+}
+
+.selectButton .reset {
+  background-color: black;
 }
