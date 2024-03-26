@@ -3,11 +3,14 @@ import styles from "../components/PokemonFight.module.css";
 
 const PokemonFight = ({ pokemon, pokemonList }) => {
   const [outcomeText, setOutcomeText] = useState("");
+  const [isActive, setIsActive] = useState(false);
 
   const number = useMemo(() => Math.floor(Math.random() * 30), []);
   const randomPokemon = pokemonList[number];
 
-  const fightLogic = (pokemon, randomPokemon) => {
+  const fightLogic = (event, pokemon, randomPokemon) => {
+    setIsActive(true);
+
     const randomNumber1 = Math.floor(Math.random() * 50);
     const randomNumber2 = Math.floor(Math.random() * 50);
 
@@ -22,6 +25,11 @@ const PokemonFight = ({ pokemon, pokemonList }) => {
 
   useEffect(() => {}, [outcomeText]);
 
+  const resetLogic = () => {
+    setIsActive(false);
+    setOutcomeText("");
+  };
+
   return (
     <div className={styles.background}>
       <div className={styles.pageUp}>
@@ -31,8 +39,9 @@ const PokemonFight = ({ pokemon, pokemonList }) => {
             <br /> Speed:{pokemon.base.Speed}
           </h3>
         </div> */}
-        <div className={styles.img}>
+        <div className={`${styles.img} ${isActive ? styles.fightStarted : ""}`}>
           <img
+            className={styles.faceRight}
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
             alt={pokemon.name}
           />
@@ -40,16 +49,26 @@ const PokemonFight = ({ pokemon, pokemonList }) => {
         </div>
         <div className={styles.selectButton}>
           <button
+            disabled={isActive}
             onClick={() =>
-              fightLogic(pokemon.name.english, randomPokemon.name.english)
+              fightLogic(
+                event,
+                pokemon.name.english,
+                randomPokemon.name.english
+              )
             }
           >
             {" "}
             Fight!
           </button>
           <h1>{outcomeText}</h1>
+          {isActive ? (
+            <button onClick={() => resetLogic()} className={styles.reset}>
+              Reset
+            </button>
+          ) : null}
         </div>
-        <div className={styles.img}>
+        <div className={`${styles.img} ${isActive ? styles.fightStarted : ""}`}>
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`}
             alt={pokemon.name}
