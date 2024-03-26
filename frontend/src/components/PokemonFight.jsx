@@ -38,22 +38,23 @@ const PokemonFight = ({ pokemon, pokemonList }) => {
           />
           <h2>{pokemon.name.english}</h2>
         </div>
-        <div className={styles.img}>
-          <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`}
-            alt={pokemon.name}
-          />
-          <h2>{randomPokemon.name.english}</h2>
-        </div>
         <div className={styles.selectButton}>
           <button
             onClick={() =>
               fightLogic(pokemon.name.english, randomPokemon.name.english)
             }
           >
+            {" "}
             Fight!
           </button>
           <h1>{outcomeText}</h1>
+        </div>
+        <div className={styles.img}>
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`}
+            alt={pokemon.name}
+          />
+          <h2>{randomPokemon.name.english}</h2>
         </div>
       </div>
     </div>
